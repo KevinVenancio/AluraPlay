@@ -1,11 +1,11 @@
 async function listaVideos(){
-    const conexao = await fetch("http://localhost:3000/videos");
+    const conexao = await fetch("https://alura-play-lime-chi.vercel.app/videos");
     const conexaoConvertida = await conexao.json()
     return conexaoConvertida;
 }
 
 async function criaVideo(titulo, descricao, url, imagem){
-    const conexao = await fetch("http://localhost:3000/videos", {
+    const conexao = await fetch("https://alura-play-lime-chi.vercel.app/videos", {
         method: "POST",
         headers: {
             "Content-type": "application/json"
@@ -26,7 +26,7 @@ async function criaVideo(titulo, descricao, url, imagem){
 }
 
 async function buscaVideo(termoDeBusca){
-    const conexao = await fetch(`http://localhost:3000/videos?q=${termoDeBusca}`);
+    const conexao = await fetch(`https://alura-play-lime-chi.vercel.app/videos?q=${termoDeBusca}`);
 
     const conexaoConvertida = conexao.json();
     return conexaoConvertida;
